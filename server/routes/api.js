@@ -60,7 +60,7 @@ router.get('/products', (req, res) => {
 });
 
 router.get('/shelfs', (req, res) => {
-    //call products
+    //call shelfs
     let products = [];
     res.json(products);
 });
