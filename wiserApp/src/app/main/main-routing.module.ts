@@ -5,13 +5,19 @@ import { ProductsComponent } from './products/products.component';
 import { ShelfsComponent } from './shelfs/shelfs.component';
 import { RegisterComponent } from './register/register.component';
 import { MainComponent } from './main.component';
+import { AuthGuard } from '../_guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'content',
+    path: '',
     component: MainComponent,
     children: [
-        {
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      },
+      {
             path: 'home',
             component: LandingComponent
         },

@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navBarContent">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/landing" routerLinkActive="active">Home</a>
+        <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
@@ -17,11 +17,12 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Action</button>
+      <a class="nav-link" *ngIf="userType" routerLink="/newuser" routerLinkActive="active"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Action</button></a>
+      <button (click)='logoutUser()' class="btn btn-outline-danger my-2 my-sm-0" type="button">Logout</button>
     </form>
   </div>
 </nav>
 
-<p>
-  main works!
-</p>
+<div class="container">
+<router-outlet></router-outlet>
+</div>
